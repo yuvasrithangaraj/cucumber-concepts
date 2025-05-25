@@ -46,7 +46,7 @@ public class orange_StepDef {
 		boolean status = driver.findElement(By.xpath("(//*[text()='Dashboard'])[2]")).isDisplayed();
 		Assert.assertTrue("login failed", status); // it will only print when the test fails
 		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File srcSS = new File("./screenshots/img.png");
+		File srcSS = new File("./screenshots/picture.png");
 		FileHandler.copy(srcFile, srcSS);
 
 		driver.quit();
