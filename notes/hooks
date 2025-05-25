@@ -1,0 +1,72 @@
+Cucumber Hooks
+__________________________________
+
+Why?
+Used to set things up before/after doing something
+
+We have only two annotations - @Before, @After
+@Before
+public void before(){
+	System.out.println("runs before every scenario") }
+	
+@After
+public void after(){
+	System.out.println("runs after every scenario") }	
+
+
+NOTE: Watch the import statements. It has to be the below ones.
+import cucumber.api.java.After
+import cucumber.api.java.Before - not from Junit
+
+__________________________________________________
+Order of Execution
+__________________________________________________
+
+If we have more than one @Before or @After, then we can use "order" to which one executes first
+@Before (order=int):
+Increment Order (0,1,2,..)
+That is 0 will run first, 1 next and 2 and so on
+@After (order=int):
+This runs in decrement order (0,1,2,..)
+Order of Execution 2,1,0 (opposite of @Before)
+
+__________________________________________________
+Tagged Hooks
+__________________________________________________
+
+ref: https://www.toolsqa.com/cucumber/
+tagged-hooks-in-cucumber/
+
+1. We know @Before runs before every scenario and @After runs after every scenario.
+2. Problem: There will be different prerequisites before for different scenarios. what to do?
+3. Solution: customised (tagged) hooks for scenarios.
+
+Things to Remember:
+We have
+feature files level tags and scenario level tags
+@Before, @After -> is for every scenario
+@Before ("@tagname") -> is only for the scenario having the tag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
